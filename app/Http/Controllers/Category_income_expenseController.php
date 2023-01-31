@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Models\Income_expense;
-use Illuminate\Http\Request;
 use App\Models\Category_income_expense;
+use Illuminate\Http\Request;
 
-class Income_expenseController extends Controller
+class Category_income_expenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,19 +21,14 @@ class Income_expenseController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $income_expense = Income_expense::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('detail', 'LIKE', "%$keyword%")
-                ->orWhere('category', 'LIKE', "%$keyword%")
-                ->orWhere('type', 'LIKE', "%$keyword%")
-                ->orWhere('img', 'LIKE', "%$keyword%")
-                ->orWhere('price_per_piece', 'LIKE', "%$keyword%")
-                ->orWhere('amount', 'LIKE', "%$keyword%")
+            $category_income_expense = Category_income_expense::where('title', 'LIKE', "%$keyword%")
+                ->orWhere('icon', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $income_expense = Income_expense::latest()->paginate($perPage);
+            $category_income_expense = Category_income_expense::latest()->paginate($perPage);
         }
 
-        return view('income_expense.index', compact('income_expense'));
+        return view('category_income_expense.index', compact('category_income_expense'));
     }
 
     /**
@@ -44,9 +38,7 @@ class Income_expenseController extends Controller
      */
     public function create()
     {
-        $category = Category_income_expense::where('id' , '!=' , null)->get();
-
-        return view('income_expense.create', compact('category'));
+        return view('category_income_expense.create');
     }
 
     /**
@@ -60,14 +52,14 @@ class Income_expenseController extends Controller
     {
         
         $requestData = $request->all();
-                if ($request->hasFile('img')) {
-            $requestData['img'] = $request->file('img')
+                if ($request->hasFile('icon')) {
+            $requestData['icon'] = $request->file('icon')
                 ->store('uploads', 'public');
         }
 
-        Income_expense::create($requestData);
+        Category_income_expense::create($requestData);
 
-        return redirect('income_expense')->with('flash_message', 'Income_expense added!');
+        return redirect('category_income_expense')->with('flash_message', 'Category_income_expense added!');
     }
 
     /**
@@ -79,9 +71,9 @@ class Income_expenseController extends Controller
      */
     public function show($id)
     {
-        $income_expense = Income_expense::findOrFail($id);
+        $category_income_expense = Category_income_expense::findOrFail($id);
 
-        return view('income_expense.show', compact('income_expense'));
+        return view('category_income_expense.show', compact('category_income_expense'));
     }
 
     /**
@@ -93,10 +85,9 @@ class Income_expenseController extends Controller
      */
     public function edit($id)
     {
-        $income_expense = Income_expense::findOrFail($id);
-        $category = Category_income_expense::where('id' , '!=' , null)->get();
-        
-        return view('income_expense.edit', compact('income_expense','category'));
+        $category_income_expense = Category_income_expense::findOrFail($id);
+
+        return view('category_income_expense.edit', compact('category_income_expense'));
     }
 
     /**
@@ -111,15 +102,15 @@ class Income_expenseController extends Controller
     {
         
         $requestData = $request->all();
-                if ($request->hasFile('img')) {
-            $requestData['img'] = $request->file('img')
+                if ($request->hasFile('icon')) {
+            $requestData['icon'] = $request->file('icon')
                 ->store('uploads', 'public');
         }
 
-        $income_expense = Income_expense::findOrFail($id);
-        $income_expense->update($requestData);
+        $category_income_expense = Category_income_expense::findOrFail($id);
+        $category_income_expense->update($requestData);
 
-        return redirect('income_expense')->with('flash_message', 'Income_expense updated!');
+        return redirect('category_income_expense')->with('flash_message', 'Category_income_expense updated!');
     }
 
     /**
@@ -131,8 +122,8 @@ class Income_expenseController extends Controller
      */
     public function destroy($id)
     {
-        Income_expense::destroy($id);
+        Category_income_expense::destroy($id);
 
-        return redirect('income_expense')->with('flash_message', 'Income_expense deleted!');
+        return redirect('category_income_expense')->with('flash_message', 'Category_income_expense deleted!');
     }
 }

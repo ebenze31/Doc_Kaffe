@@ -35,7 +35,7 @@
                                 @foreach($income_expense as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->title }}</td><td>{{ $item->detail }}</td><td>{{ $item->category }}</td><td>{{ $item->type }}</td><td>{{ $item->img }}</td><td>{{ $item->price_per_piece }}</td><td>{{ $item->amount }}</td>
+                                        <td>{{ $item->title }}</td><td>{{ $item->detail }}</td><td>{{ $item->category }}</td><td>{{ $item->type }}</td><td><img width="70%" src="{{ url('storage')}}/{{ $item->img }}"></td><td>{{ $item->price_per_piece }}</td><td>{{ $item->amount }}</td>
                                         <td>
                                             <a href="{{ url('/income_expense/' . $item->id) }}" title="View Income_expense"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/income_expense/' . $item->id . '/edit') }}" title="Edit Income_expense"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

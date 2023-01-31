@@ -22,3 +22,4 @@ Route::get('/theme_admin', function () {
 });
 
 Route::resource('income_expense', 'Income_expenseController');
+Route::resource('category_income_expense', 'Category_income_expenseController');

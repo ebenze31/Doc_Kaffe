@@ -50,16 +50,17 @@
       <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
         <ul class="navbar-nav navbar-nav-hover w-100">
           <li class="nav-item ms-lg-auto">
-            <a class="nav-link nav-link-icon me-2" href="https://github.com/creativetimofficial/soft-ui-design-system" target="_blank">
-              <i class="fa fa-github me-1"></i>
-              <p class="d-inline text-sm z-index-1 font-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Github</p>
+            <!--  -->
+          </li>
+          <li class="nav-item my-auto ms-3 ms-lg-0">
+            <a href="{{ url('income_expense') }}" class="btn btn-sm btn-outline-white btn-round mb-0 me-1 mt-2 mt-md-0">
+              รายรับ - รายจ่าย
             </a>
           </li>
           <li class="nav-item my-auto ms-3 ms-lg-0">
-            <a href="#" class="btn btn-sm btn-outline-white btn-round mb-0 me-1 mt-2 mt-md-0">Online</a>
-          </li>
-          <li class="nav-item my-auto ms-3 ms-lg-0">
-            <a href="#" class="btn btn-sm  bg-white  btn-round mb-0 me-1 mt-2 mt-md-0">Upgrade</a>
+            <a href="#" class="btn btn-sm  bg-white  btn-round mb-0 me-1 mt-2 mt-md-0">
+              สูตร
+            </a>
           </li>
         </ul>
       </div>
