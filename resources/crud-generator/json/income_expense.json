@@ -1,0 +1,32 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "detail",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "type",
+            "type": "string"
+        },
+        {
+            "name": "img",
+            "type": "file"
+        },
+        {
+            "name": "price_per_piece",
+            "type": "float"
+        },
+        {
+            "name": "amount",
+            "type": "integer"
+        }
+    ]
+}
