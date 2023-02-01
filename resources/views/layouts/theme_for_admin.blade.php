@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
 	<link rel="icon" href="{{ asset('/img/logo/Doc. Kaffe.png') }}" type="image/png" />
+	<!-- icon -->
+  	<link href="https://kit-pro.fontawesome.com/releases/v6.0.0/css/pro.min.css" rel="stylesheet">
 	<!--plugins-->
 	<link href="{{ asset('assets_for_admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('assets_for_admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
@@ -24,6 +26,16 @@
 	<link rel="stylesheet" href="{{ asset('assets_for_admin/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets_for_admin/css/header-colors.css') }}" />
 	<title>Doc. Kaffe - ADMIN</title>
+
+	<style type="text/css">
+	    .main-shadow {
+	      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+	    }
+
+	    .main-radius {
+	      border-radius: 5px;
+	    }
+	</style>
 </head>
 
 <body>
