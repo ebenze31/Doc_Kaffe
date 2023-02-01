@@ -616,7 +616,6 @@
 		<!-- ---- CONTENT ---- -->
 		<!-- ---- CONTENT ---- -->
 		<!-- ---- CONTENT ---- -->
-		<br><br><br><br><br><br><br>
 		@yield('content')
 		<!-- ---- CONTENT ---- -->
 		<!-- ---- CONTENT ---- -->
