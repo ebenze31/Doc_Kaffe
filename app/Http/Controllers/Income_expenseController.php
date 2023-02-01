@@ -19,7 +19,7 @@ class Income_expenseController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 50;
+        $perPage = 20;
 
         if (!empty($keyword)) {
             $income_expense = Income_expense::where('title', 'LIKE', "%$keyword%")
