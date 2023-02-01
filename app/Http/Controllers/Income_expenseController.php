@@ -19,7 +19,7 @@ class Income_expenseController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 20;
+        $perPage = 50;
 
         if (!empty($keyword)) {
             $income_expense = Income_expense::where('title', 'LIKE', "%$keyword%")
@@ -34,7 +34,26 @@ class Income_expenseController extends Controller
             $income_expense = Income_expense::latest()->paginate($perPage);
         }
 
-        return view('income_expense.index', compact('income_expense'));
+        // รายรับ
+        $income = Income_expense::where('type', 'รายรับ')->get();
+        $count_income = count($income);
+        $sum_income = 0 ;
+        foreach ($income as $in) {
+            $sum_income = $sum_income + (int)$in->total_price ;
+
+        }
+
+        // รายจ่าย
+        $expense = Income_expense::where('type', 'รายจ่าย')->get();
+        $count_expense = count($expense);
+        $sum_expense = 0 ;
+        foreach ($expense as $ex) {
+            $sum_expense = $sum_expense + (int)$ex->total_price ;
+        }
+
+        $total_money = $sum_income - $sum_expense ;
+
+        return view('income_expense.index', compact('income_expense','count_income','sum_income','count_expense','sum_expense','total_money'));
     }
 
     /**
