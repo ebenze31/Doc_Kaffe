@@ -83,10 +83,10 @@
                                     </form>
                                 </div>
                             </div>
-
+                            <br><br>
                             <div class="row align-items-center">
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="pagination-wrapper"> 
+                                    <div class="pagination-wrapper float-end"> 
                                         {!! $income_expense->appends(['search' => Request::get('search')])->render() !!} 
                                     </div>
                                 </div>
