@@ -83,7 +83,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <br><br>
+                            <br>
                             <div class="row align-items-center">
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="pagination-wrapper float-end"> 
