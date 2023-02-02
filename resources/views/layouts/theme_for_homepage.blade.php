@@ -53,7 +53,7 @@
             <!--  -->
           </li>
           <li class="nav-item my-auto ms-3 ms-lg-0">
-            <a href="{{ url('income_expense') }}" class="btn btn-sm btn-outline-white btn-round mb-0 me-1 mt-2 mt-md-0">
+            <a href="{{ url('/income_expense') }}" class="btn btn-sm btn-outline-white btn-round mb-0 me-1 mt-2 mt-md-0">
               รายรับ - รายจ่าย
             </a>
           </li>

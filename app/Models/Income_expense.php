@@ -25,7 +25,7 @@ class Income_expense extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'detail', 'category', 'type', 'img', 'price_per_piece', 'amount','total_price'];
+    protected $fillable = ['title', 'detail', 'category', 'type', 'img', 'price_per_piece', 'amount','total_price','transportation_costs'];
 
     
 }
